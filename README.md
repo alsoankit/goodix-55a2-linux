@@ -6,9 +6,9 @@
 >
 > - **Works out of the box on Fedora**: an SELinux policy so fprintd can reach
 >   the bridge (without it, enrolling fails with `enroll-unknown-error`)
-> - **Press to unlock**: the power-button press that wakes the screen also
->   unlocks, like Windows Hello
 > - **Survives suspend**: reconnects to the sensor after sleep
+> - **Safer calibration**: a bad "empty sensor" baseline is never saved, so one
+>   bad moment can't make every later touch fail
 > - **20-touch enrollment** for more reliable matching on the small sensor
 >
 > Changes are offered upstream as pull requests. Also tested on a ThinkBook 14s

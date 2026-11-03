@@ -1,6 +1,6 @@
 libfprint-tod-goodix-55a2 (0.1.3) unstable; urgency=medium
 
-  * Press to unlock: accept a finger already on the sensor (once per placement).
+  * Only save a sensor baseline after a match confirms it; settle after open.
   * Reconnect to the sensor after suspend/resume.
   * Enroll 20 touches instead of 10.
   * SELinux policy for Fedora/RHEL (not used on Debian).
