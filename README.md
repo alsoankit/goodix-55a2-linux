@@ -116,7 +116,7 @@ Don't touch the sensor during the first enrollment's opening seconds: the
 bridge takes its calibration frame then.
 
 ```sh
-fprintd-enroll          # 10 touches; lift fully, move slightly between touches
+fprintd-enroll          # 20 touches; lift fully, move slightly between touches
 fprintd-verify
 ```
 
@@ -125,6 +125,12 @@ To use the fingerprint for login and sudo on Fedora:
 
 Tips: cover the whole finger pad during enrollment (center, edges, a little
 rotation). If verification misses often, delete the print and enroll again.
+
+On laptops where the sensor is in the power button, a press that wakes the
+screen also unlocks: verify/identify accept a finger that is already on the
+sensor (once per placement). For this the power button action should not be
+"sleep" (KDE: System Settings → Power Management → "When power button
+pressed"). After suspend/resume the bridge reconnects to the sensor on its own.
 
 ## Uninstall
 
