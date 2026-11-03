@@ -1,12 +1,12 @@
 %undefine _debugsource_packages
 
 Name:           libfprint-tod-goodix-55a2
-Version:        0.1.2
+Version:        0.1.3
 Release:        1%{?dist}
 Summary:        Goodix 27c6:55a2 fingerprint reader support for fprintd
 
 License:        MIT
-URL:            https://github.com/mfat/goodix-55a2-linux
+URL:            https://github.com/alsoankit/goodix-55a2-linux
 Source0:        %{url}/archive/refs/tags/v%{version}/goodix-55a2-linux-%{version}.tar.gz
 
 BuildRequires:  gcc
@@ -77,6 +77,11 @@ fi
 %{_datadir}/selinux/packages/goodix55a2.pp
 
 %changelog
+* Tue Nov 03 2026 Ankit Kumar <alsoankit@gmail.com> - 0.1.3-1
+- SELinux policy so fprintd can reach the bridge on Fedora
+- Press to unlock: accept a finger already on the sensor (once per placement)
+- Reconnect to the sensor after suspend/resume
+- Enroll 20 touches instead of 10
 * Sun Oct 11 2026 mFat <newmfat@gmail.com> - 0.1.2-1
 - Tie the saved no-finger baseline to the chip config and recover from stale baselines
 

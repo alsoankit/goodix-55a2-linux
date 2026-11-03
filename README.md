@@ -1,5 +1,19 @@
 # Goodix 27c6:55a2 fingerprint reader on Linux
 
+> **Fork of [mfat/goodix-55a2-linux](https://github.com/mfat/goodix-55a2-linux)**
+> by Mehdi ([@mfat](https://github.com/mfat)), who wrote the driver, the bridge
+> and the reverse engineering behind them. This fork adds:
+>
+> - **Works out of the box on Fedora**: an SELinux policy so fprintd can reach
+>   the bridge (without it, enrolling fails with `enroll-unknown-error`)
+> - **Press to unlock**: the power-button press that wakes the screen also
+>   unlocks, like Windows Hello
+> - **Survives suspend**: reconnects to the sensor after sleep
+> - **20-touch enrollment** for more reliable matching on the small sensor
+>
+> Changes are offered upstream as pull requests. Also tested on a ThinkBook 14s
+> Yoga G2 IAP (21DM), firmware `GF3208_RTSEC_APP_10064`.
+
 Makes the Goodix `27c6:55a2` USB fingerprint reader work with fprintd (login,
 sudo, lock screen) through a small libfprint TOD driver and a Python bridge.
 
@@ -98,7 +112,7 @@ and loads the SELinux module.
 Runtime dependencies: `python3`, pyusb, numpy, OpenCV (`cv2`).
 
 ```sh
-git clone https://github.com/mfat/goodix-55a2-linux
+git clone https://github.com/alsoankit/goodix-55a2-linux
 cd goodix-55a2-linux
 make
 sudo ./install.sh
