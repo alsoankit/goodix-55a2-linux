@@ -12,7 +12,7 @@
 > - **20-touch enrollment** for more reliable matching on the small sensor
 >
 > Changes are offered upstream as pull requests. Also tested on a ThinkBook 14s
-> Yoga G2 IAP (21DM), firmware `GF3208_RTSEC_APP_10064`.
+> Yoga G2 IAP (21DM), firmware `GF3206_RTSEC_APP_10064`.
 
 Makes the Goodix `27c6:55a2` USB fingerprint reader work with fprintd (login,
 sudo, lock screen) through a small libfprint TOD driver and a Python bridge.
